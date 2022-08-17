@@ -73,14 +73,15 @@ type Notification struct {
 }
 
 type AndroidConfig struct {
-	CollapseKey   int                  `json:"collapse_key,omitempty"`    // 用户设备离线时，Push服务器对离线消息缓存机制的控制方式，用户设备上线后缓存消息会再次下发，取值如下： 0：对每个应用发送到该用户设备的离线消息只会缓存最新的一条。 -1：对所有离线消息都缓存。 1~100：离线消息缓存分组标识，对离线消息进行分组缓存，每个应用每一组最多缓存一条离线消息。 如果您发送了10条消息，其中前5条的collapse_key为1，后5条的collapse_key为2，那么待用户上线后collapse_key为1和2的分别下发最新的一条消息给最终用户。
-	Urgency       string               `json:"urgency,omitempty"`         // 透传消息投递优先级，取值如下： HIGH NORMAL 设置为HIGH时需要申请权限，请参见申请特殊权限。HIGH级别消息到达用户手机时可强制拉起应用进程。
-	Category      string               `json:"category,omitempty"`        // 标识高优先级透传消息的特殊场景，取值如下：PLAY_VOICE：语音播报 VOIP：VoIP电话 需申请特殊权限，请参见申请特殊权限。
-	TTL           string               `json:"ttl,omitempty"`             // 消息缓存时间，单位是秒。在用户设备离线时，消息在Push服务器进行缓存，在消息缓存时间内用户设备上线，消息会下发，超过缓存时间后消息会丢弃，默认值为86400（1天），最大值为15天。
-	BiTag         string               `json:"bi_tag,omitempty"`          // 批量任务消息标识，消息回执时会返回给应用服务器，应用服务器可以识别bi_tag对消息的下发情况进行统计分析。
-	FastAppTarget int                  `json:"fast_app_target,omitempty"` // 快应用发送透传消息时，指定小程序的模式类型，小程序有两种模式开发态和生产态，取值如下： 1：开发态 2：生产态（默认值）
-	Data          string               `json:"data,omitempty"`            // 自定义消息负载，此处如果设置了data，则会覆盖message.data字段。
-	Notification  *AndroidNotification `json:"notification,omitempty"`    // Android通知栏消息结构体，具体字段请参见AndroidNotification结构体的定义。
+	CollapseKey    int                  `json:"collapse_key,omitempty"`     // 用户设备离线时，Push服务器对离线消息缓存机制的控制方式，用户设备上线后缓存消息会再次下发，取值如下： 0：对每个应用发送到该用户设备的离线消息只会缓存最新的一条。 -1：对所有离线消息都缓存。 1~100：离线消息缓存分组标识，对离线消息进行分组缓存，每个应用每一组最多缓存一条离线消息。 如果您发送了10条消息，其中前5条的collapse_key为1，后5条的collapse_key为2，那么待用户上线后collapse_key为1和2的分别下发最新的一条消息给最终用户。
+	Urgency        string               `json:"urgency,omitempty"`          // 透传消息投递优先级，取值如下： HIGH NORMAL 设置为HIGH时需要申请权限，请参见申请特殊权限。HIGH级别消息到达用户手机时可强制拉起应用进程。
+	Category       string               `json:"category,omitempty"`         // 标识高优先级透传消息的特殊场景，取值如下：PLAY_VOICE：语音播报 VOIP：VoIP电话 需申请特殊权限，请参见申请特殊权限。
+	TTL            string               `json:"ttl,omitempty"`              // 消息缓存时间，单位是秒。在用户设备离线时，消息在Push服务器进行缓存，在消息缓存时间内用户设备上线，消息会下发，超过缓存时间后消息会丢弃，默认值为86400（1天），最大值为15天。
+	BiTag          string               `json:"bi_tag,omitempty"`           // 批量任务消息标识，消息回执时会返回给应用服务器，应用服务器可以识别bi_tag对消息的下发情况进行统计分析。
+	FastAppTarget  int                  `json:"fast_app_target,omitempty"`  // 快应用发送透传消息时，指定小程序的模式类型，小程序有两种模式开发态和生产态，取值如下： 1：开发态 2：生产态（默认值）
+	Data           string               `json:"data,omitempty"`             // 自定义消息负载，此处如果设置了data，则会覆盖message.data字段。
+	Notification   *AndroidNotification `json:"notification,omitempty"`     // Android通知栏消息结构体，具体字段请参见AndroidNotification结构体的定义。
+	TargetUserType int                  `json:"target_user_type,omitempty"` // 0：普通消息（默认值）1：测试消息。每个应用每日可发送该测试消息500条且不受每日单设备推送数量上限要求。
 }
 
 type AndroidNotification struct {
