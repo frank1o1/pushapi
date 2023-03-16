@@ -2,14 +2,14 @@
 
 [![Build Status](https://travis-ci.org/modood/pushapi.png)](https://travis-ci.org/modood/pushapi)
 [![Coverage Status](https://coveralls.io/repos/github/modood/pushapi/badge.svg?branch=master)](https://coveralls.io/github/modood/pushapi?branch=master)
-[![GoDoc](https://pkg.go.dev/badge/github.com/modood/pushapi)](https://pkg.go.dev/github.com/modood/pushapi)
+[![GoDoc](https://pkg.go.dev/badge/github.com/frank1o1/pushapi)](https://pkg.go.dev/github.com/frank1o1/pushapi)
 
 各手机厂商推送 api 接入
 
 *   vivo （最后更新时间：2021-02-08 17:34:37）
 *   oppo （最后更新时间：2021-04-21 16:03:09）
 *   小米 （最后更新时间：2022-08-02 10:00:00）
-*   华为 （最后更新时间：2021-04-21 10:51:00）
+*   华为 （最后更新时间：2023-03-16 12:25:00）
 
 ## 调用示例
 
@@ -23,7 +23,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/modood/pushapi/vivopush"
+	"github.com/frank1o1/pushapi/vivopush"
 )
 
 var appId = "your app id"
@@ -58,7 +58,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/modood/pushapi/oppopush"
+	"github.com/frank1o1/pushapi/oppopush"
 )
 
 var appKey = "your app key"
@@ -91,7 +91,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/modood/pushapi/xiaomipush"
+	"github.com/frank1o1/pushapi/xiaomipush"
 )
 
 var appSecret = "your app secret"
@@ -127,7 +127,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/modood/pushapi/huaweipush"
+	"github.com/frank1o1/pushapi/huaweipush"
 )
 
 var appId = "your app id"
@@ -165,5 +165,5 @@ func main() {
 
 ## License
 
-this repo is released under the [MIT License](https://github.com/modood/pushapi/blob/master/LICENSE).
+this repo is released under the [MIT License](https://github.com/frank1o1/pushapi/blob/master/LICENSE).
 

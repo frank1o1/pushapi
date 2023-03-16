@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/modood/pushapi/huaweipush"
+	"github.com/frank1o1/pushapi/huaweipush"
 )
 
 var appId = "your app id"

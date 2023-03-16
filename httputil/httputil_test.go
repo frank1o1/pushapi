@@ -3,7 +3,7 @@ package httputil_test
 import (
 	"testing"
 
-	"github.com/modood/pushapi/httputil"
+	"github.com/frank1o1/pushapi/httputil"
 )
 
 type TestType1 struct {

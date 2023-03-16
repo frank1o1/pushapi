@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/modood/pushapi/httputil"
+	"github.com/frank1o1/pushapi/httputil"
 )
 
 type Client struct {
